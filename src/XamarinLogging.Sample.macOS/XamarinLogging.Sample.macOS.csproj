@@ -145,6 +145,7 @@
     <Folder Include="Setup\" />
     <Folder Include="Extensions\" />
     <Folder Include="ViewControllers\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -161,6 +162,7 @@
     <Compile Include="ViewControllers\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MacHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

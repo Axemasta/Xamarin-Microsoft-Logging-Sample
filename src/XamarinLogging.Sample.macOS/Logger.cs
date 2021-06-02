@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
+using XamarinLogging.Sample.macOS.Helpers;
 
 namespace XamarinLogging.Sample.macOS
 {
@@ -60,12 +61,10 @@ namespace XamarinLogging.Sample.macOS
             {
                 builder.AddConfiguration(configuration.GetSection("Logging"));
 
-                var baseDirectory = Directory.GetCurrentDirectory();
-
-                var outputDirectory = Path.Combine(baseDirectory, "Logs");
+                var baseDirectory = MacHelper.GetBundleLocationString();
 
                 // the "standard" provider which logs all messages with severity warning or above to 'warn+err.log' (see appsettings.json for configuration settings)
-                builder.AddFile(o => o.RootPath = outputDirectory);
+                builder.AddFile(o => o.RootPath = baseDirectory);
 
                 builder.AddFilter("Microsoft", LogLevel.Warning)
                     .AddFilter("System", LogLevel.Warning)

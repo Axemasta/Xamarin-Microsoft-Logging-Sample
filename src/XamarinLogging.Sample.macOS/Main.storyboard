@@ -1,7 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +685,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -703,11 +705,103 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="509" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F7O-FJ-djV">
+                                <rect key="frame" x="18" y="60" width="473" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Logging With Microsoft.Extension.Logging" id="k6U-Yo-N48">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="34" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hc-IH-mdQ">
+                                <rect key="frame" x="20" y="20" width="469" height="20"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U4f-76-aTh">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="20"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Write Something Here..." drawsBackground="YES" id="PwW-Y6-NTI">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYT-7M-HAR">
+                                        <rect key="frame" x="290" y="-4" width="107" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="yL9-6D-eiT"/>
+                                        </constraints>
+                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1pJ-P6-AUe" id="70O-ek-hTN">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="C3g-K7-h0h">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="1pJ-P6-AUe"/>
+                                                    <menuItem title="Item 2" id="H9y-pT-EWT"/>
+                                                    <menuItem title="Item 3" id="R76-aT-fv8"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <action selector="logLevelSelected:" target="XfG-lQ-9wD" id="amp-67-Jhu"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fc0-0T-rd4">
+                                        <rect key="frame" x="406" y="-7" width="70" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="c0U-SB-tjf"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Log It" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B86-y8-o6b">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="logButtonPressed:" target="XfG-lQ-9wD" id="iem-N0-CAy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fc0-0T-rd4" secondAttribute="trailing" id="0xr-18-BxE"/>
+                                    <constraint firstItem="U4f-76-aTh" firstAttribute="top" secondItem="2hc-IH-mdQ" secondAttribute="top" id="2Ua-kk-3uC"/>
+                                    <constraint firstItem="fc0-0T-rd4" firstAttribute="leading" secondItem="IYT-7M-HAR" secondAttribute="trailing" constant="20" id="3sE-m6-V8L"/>
+                                    <constraint firstItem="fc0-0T-rd4" firstAttribute="top" secondItem="2hc-IH-mdQ" secondAttribute="top" id="4zT-JZ-DUU"/>
+                                    <constraint firstAttribute="bottom" secondItem="IYT-7M-HAR" secondAttribute="bottom" id="YwF-d0-JkI"/>
+                                    <constraint firstAttribute="bottom" secondItem="fc0-0T-rd4" secondAttribute="bottom" id="ZG5-57-B3C"/>
+                                    <constraint firstItem="IYT-7M-HAR" firstAttribute="top" secondItem="2hc-IH-mdQ" secondAttribute="top" id="aAu-Cg-l3d"/>
+                                    <constraint firstItem="U4f-76-aTh" firstAttribute="leading" secondItem="2hc-IH-mdQ" secondAttribute="leading" id="m8n-5B-rrL"/>
+                                    <constraint firstAttribute="bottom" secondItem="U4f-76-aTh" secondAttribute="bottom" id="sit-jt-mcD"/>
+                                    <constraint firstItem="IYT-7M-HAR" firstAttribute="leading" secondItem="U4f-76-aTh" secondAttribute="trailing" constant="20" id="tNH-VA-wJk"/>
+                                    <constraint firstItem="IYT-7M-HAR" firstAttribute="leading" secondItem="U4f-76-aTh" secondAttribute="trailing" constant="20" id="tl9-oy-7M7"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="F7O-FJ-djV" secondAttribute="trailing" constant="20" id="G0p-v7-688"/>
+                            <constraint firstItem="F7O-FJ-djV" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Hax-ob-j3F"/>
+                            <constraint firstItem="2hc-IH-mdQ" firstAttribute="top" secondItem="F7O-FJ-djV" secondAttribute="bottom" constant="20" id="Rhz-LW-6KM"/>
+                            <constraint firstAttribute="bottom" secondItem="2hc-IH-mdQ" secondAttribute="bottom" constant="20" id="YzM-73-IM8"/>
+                            <constraint firstAttribute="trailing" secondItem="2hc-IH-mdQ" secondAttribute="trailing" constant="20" id="gZj-h2-2gm"/>
+                            <constraint firstItem="2hc-IH-mdQ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="iAP-EY-TaA"/>
+                            <constraint firstItem="F7O-FJ-djV" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="yN5-Wk-Ouj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logLevelSelector" destination="IYT-7M-HAR" id="bhQ-Kz-RvN"/>
+                        <outlet property="messageTextField" destination="U4f-76-aTh" id="sh6-bh-tOF"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
